@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhavya Parekh | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000;
+      color: #f1f1f1;
+      line-height: 1.6;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .datetime-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 20px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #00ffff;
+      z-index: 1000;
+      pointer-events: none;
+      box-shadow: 0 2px 8px rgba(0,255,255,0.2);
+    }
+
+    nav {
+      background-color: #111;
+      padding: 10px 0;
+      text-align: center;
+      margin: 40px 0 30px 0;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,255,255,0.1);
+      position: relative;
+      z-index: 10;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1e90ff;
+    }
+
+    .profile-container {
+      padding: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .image-wrapper {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      transition: transform 1s linear;
+    }
+
+    .profile-img:hover {
+      transform: rotate(360deg);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #00ffff;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 10px;
+      flex-grow: 1;
+    }
+
+    section {
+      margin-bottom: 40px;
+      background: #111;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0, 255, 255, 0.1);
+      transition: transform 0.4s;
+    }
+
+    section:hover {
+      transform: translateY(-4px);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #00ffff;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #222;
+    }
+
+    a {
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #1e90ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: auto;
+      background: #111;
+      border-top: 1px solid #222;
+      font-size: 0.95rem;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s forwards ease;
+    }
+
+    .delay-1 { animation-delay: 0.5s; }
+    .delay-2 { animation-delay: 1s; }
+    .delay-3 { animation-delay: 1.5s; }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+      .profile-container { max-width: 300px; padding: 10px; }
+      .image-wrapper { width: 120px; height: 120px; }
+      section { padding: 16px; }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 10px; }
+      .profile-container { max-width: 100%; padding: 10px; }
+      .image-wrapper { width: 100px; height: 100px; }
+      h1 { font-size: 1.8rem; }
+      p, li, a, footer { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="datetime-container">
+    <div id="time">--:--:--</div>
+    <div id="date">--/--/----</div>
+  </div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <div class="profile-container fade-in">
+      <div class="image-wrapper">
+        <img src="https://i.pinimg.com/originals/40/03/04/4003047c512a3247a818e9d9f2616387.jpg" alt="Profile Image" class="profile-img"/>
+      </div>
+      <h1>Bhavya Parekh</h1>
+      <p>Student | Developer | Designer | Graphics Design</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="about fade-in delay-1">
+      <h2>About Me</h2>
+      <p>I am a first-year CSE (AI/DS) student at Pimpri Chinchwad University. Passionate about web development, UI/UX design, and exploring new technologies.</p>
+    </section>
+
+    <section id="skills" class="skills fade-in delay-2">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>C, C++, Python</li>
+        <li>UI/UX Design</li>
+        <li>Frontend & Backend (Meta Course)</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="projects fade-in delay-2">
+      <h2>Projects</h2>
+      <p>Coming shortly...</p>
+    </section>
+
+    <section id="contact" class="contact fade-in delay-3">
+      <h2>Contact</h2>
+      <p>Phone: 9923568178</p>
+      <p>Email: bhavyaparekh00@gmail.com</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/bhavya-parekh-ab566b307" target="_blank">My Profile</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bhavya Parekh. All rights reserved.</p>
+  </footer>
+
+  <!-- Chatbot -->
+  <button id="chat-toggle" style="position: fixed; bottom: 20px; right: 20px; background-color: #00bfff; color: #fff; border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 28px; cursor: pointer; z-index: 1000;">💬</button>
+
+  <div id="chatbot" style="position: fixed; bottom: 90px; right: 20px; width: 300px; max-height: 400px; background-color: #111; color: #f1f1f1; border: 1px solid #00bfff; border-radius: 10px; display: none; flex-direction: column; z-index: 1000; overflow: hidden; box-shadow: 0 0 10px rgba(0,255,255,0.3);">
+    <div style="padding: 10px; background-color: #00bfff; color: black; font-weight: bold;">
+      AI Assistant
+      <button id="close-chat" style="float: right; background: none; border: none; font-size: 18px; color: black; cursor: pointer;">✖</button>
+    </div>
+    <div id="chat-messages" style="flex-grow: 1; padding: 10px; overflow-y: auto; font-size: 14px;"></div>
+    <form id="chat-form" style="display: flex; border-top: 1px solid #00bfff;">
+      <input type="text" id="user-input" placeholder="Type a message..." style="flex-grow: 1; padding: 10px; border: none; outline: none; background-color: #222; color: #fff;" />
+      <button type="submit" style="background-color: #00bfff; border: none; color: black; padding: 0 15px; cursor: pointer;">➤</button>
+    </form>
+  </div>
+
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      const date = now.toLocaleDateString();
+      document.getElementById('time').textContent = time;
+      document.getElementById('date').textContent = date;
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatbot = document.getElementById('chatbot');
+    const closeChat = document.getElementById('close-chat');
+    const chatForm = document.getElementById('chat-form');
+    const userInput = document.getElementById('user-input');
+    const chatMessages = document.getElementById('chat-messages');
+
+    chatToggle.onclick = () => chatbot.style.display = chatbot.style.display === 'none' ? 'flex' : 'none';
+    closeChat.onclick = () => chatbot.style.display = 'none';
+
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const msg = userInput.value.trim().toLowerCase();
+      if (!msg) return;
+      addMessage('You', msg);
+      respondToUser(msg);
+      userInput.value = '';
+    });
+
+    function addMessage(sender, text) {
+      const msg = document.createElement('div');
+      msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+      msg.style.marginBottom = '8px';
+      chatMessages.appendChild(msg);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function respondToUser(msg) {
+      let response = "I'm still learning! Try asking about Bhavya's skills or projects.";
+
+      if (["hi", "hello", "hey"].includes(msg)) {
+        response = "Hello! How may I help you?";
+      } else if (msg.includes("skill")) {
+        response = "Bhavya knows HTML, CSS, JavaScript, Python, C, C++, UI/UX Design, and Meta's Frontend & Backend Dev.";
+      } else if (msg.includes("project")) {
+        response = "Bhavya is working on a Hotel Management System in C++ and an e-commerce website using Django.";
+      } else if (msg.includes("contact") || msg.includes("reach")) {
+        response = "You can contact Bhavya at bhavyaparekh00@gmail.com or LinkedIn.";
+      } else if (["ok thanks", "thank you", "thanks", "thanks bhavya"].includes(msg)) {
+        response = "Welcome Sir/Madam.";
+      }
+
+      setTimeout(() => addMessage("Bot", response), 600);
+    }
+  </script>
+</body>
+</html>
